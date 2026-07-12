@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islam Ibrahim — Senior Android Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A1B14;
+    --surface:#0F271C;
+    --card:#123322;
+    --line:#1F4E37;
+    --text:#EAF7EF;
+    --muted:#9CBFAB;
+    --muted-2:#5E8770;
+    --coral:#3DDC84;
+    --coral-d:#0C2A1B;
+    --yellow:#B9E64C;
+    --yellow-d:#25300B;
+    --teal:#22D3C0;
+    --teal-d:#07302B;
+    --pink:#6EE7B7;
+    --pink-d:#0E3327;
+    --blue:#FFC947;
+    --blue-d:#3A2A05;
+    --display:'Space Grotesk', sans-serif;
+    --sans:'Inter', -apple-system, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.65; overflow-x:hidden;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+  ::selection{background:var(--yellow); color:var(--yellow-d);}
+
+  .navbar{position:sticky; top:16px; z-index:50; display:flex; justify-content:center; padding:0 20px;}
+  .pill-nav{
+    display:none; align-items:center; gap:6px; background:var(--surface);
+    border:1px solid var(--line); border-radius:999px; padding:8px; margin-top:16px;
+    box-shadow:0 10px 30px -12px rgba(0,0,0,0.5);
+  }
+  @media(min-width:760px){.pill-nav{display:flex;}}
+  .pill-nav a{font-family:var(--sans); font-size:13px; font-weight:600; color:var(--muted); padding:9px 18px; border-radius:999px;}
+  .pill-nav a:hover{color:var(--text); background:var(--card);}
+  .nav-mobile{display:flex; justify-content:space-between; align-items:center; padding:20px 28px;}
+  @media(min-width:760px){.nav-mobile{display:none;}}
+  .brand{font-family:var(--display); font-weight:700; font-size:16px;}
+  .brand .dot{color:var(--coral);}
+
+  .hero{padding:40px 0 80px; position:relative;}
+  .blob{position:absolute; border-radius:50%; filter:blur(70px); opacity:0.35; z-index:0;}
+  .blob1{width:380px; height:380px; background:var(--coral); top:-80px; right:-100px;}
+  .blob2{width:300px; height:300px; background:var(--teal); bottom:-60px; left:-80px;}
+  .hero-grid{display:grid; grid-template-columns:1fr; gap:50px; position:relative; z-index:1; align-items:center;}
+  @media(min-width:860px){.hero-grid{grid-template-columns:1.1fr 0.9fr;}}
+
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; font-weight:500; color:var(--teal); background:var(--teal-d); border:1px solid var(--teal); padding:6px 14px; border-radius:999px; margin-bottom:22px;}
+  .kicker .live-dot{width:7px; height:7px; border-radius:50%; background:var(--teal); animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+  .hero h1{font-family:var(--display); font-weight:700; font-size:clamp(34px,5.2vw,58px); line-height:1.08; letter-spacing:-1px;}
+  .hero h1 .hl{color:var(--coral);}
+  .hero-sub{margin-top:20px; color:var(--muted); font-size:17px; max-width:520px;}
+  .cta-row{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{font-family:var(--sans); font-weight:600; font-size:14px; padding:14px 26px; border-radius:999px; border:2px solid transparent; transition:transform 0.15s;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn.primary{background:var(--coral); color:#08130D;}
+  .btn.ghost{border-color:var(--line); color:var(--text);}
+  .badge-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
+  .mini-badge{font-family:var(--mono); font-size:11.5px; color:var(--muted); border:1px solid var(--line); padding:6px 12px; border-radius:8px;}
+
+  .phone{
+    background:#071309; border:6px solid #1B3D2A; border-radius:36px; padding:16px;
+    max-width:300px; margin:0 auto; box-shadow:0 30px 70px -20px rgba(0,0,0,0.6);
+  }
+  .phone-status{display:flex; justify-content:space-between; font-family:var(--mono); font-size:11px; color:var(--muted); padding:6px 6px 16px;}
+  .app-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px 10px;}
+  .app-icon{display:flex; flex-direction:column; align-items:center; gap:6px;}
+  .icon-box{width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:15px;}
+  .app-icon span{font-size:9px; color:var(--muted); font-family:var(--sans); text-align:center;}
+  .ic-coral{background:var(--coral); color:var(--coral-d);}
+  .ic-yellow{background:var(--yellow); color:var(--yellow-d);}
+  .ic-teal{background:var(--teal); color:var(--teal-d);}
+  .ic-pink{background:var(--pink); color:var(--pink-d);}
+  .phone-caption{text-align:center; font-family:var(--mono); font-size:10.5px; color:var(--muted-2); margin-top:16px;}
+
+  .legend{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:18px; font-family:var(--mono); font-size:11px; color:var(--muted);}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:9px; height:9px; border-radius:3px; display:inline-block;}
+
+  section{padding:80px 0;}
+  .eyebrow{font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;}
+  h2{font-family:var(--display); font-weight:700; font-size:clamp(26px,3.6vw,38px); margin-bottom:36px; letter-spacing:-0.5px;}
+
+  .about-grid{display:grid; grid-template-columns:1fr; gap:44px;}
+  @media(min-width:820px){.about-grid{grid-template-columns:1.2fr 1fr;}}
+  .about-text p{color:var(--muted); margin-bottom:16px; max-width:56ch; font-size:15.5px;}
+  .about-text strong{color:var(--text);}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .stat-card{border-radius:18px; padding:24px; border:1px solid var(--line);}
+  .stat-num{font-family:var(--display); font-size:30px; font-weight:700;}
+  .stat-label{font-size:12.5px; color:var(--muted); margin-top:4px;}
+  .stat-coral{background:var(--coral-d);} .stat-coral .stat-num{color:var(--coral);}
+  .stat-teal{background:var(--teal-d);} .stat-teal .stat-num{color:var(--teal);}
+  .stat-pink{background:var(--pink-d);} .stat-pink .stat-num{color:var(--pink);}
+  .stat-yellow{background:var(--yellow-d);} .stat-yellow .stat-num{color:var(--yellow);}
+
+  .stack-grid{display:grid; grid-template-columns:1fr; gap:20px;}
+  @media(min-width:760px){.stack-grid{grid-template-columns:1fr 1fr;}}
+  .stack-card{background:var(--card); border-radius:18px; padding:24px; border-top:4px solid var(--accent, var(--coral));}
+  .stack-card h3{font-family:var(--display); font-size:16px; margin-bottom:14px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{font-family:var(--mono); font-size:11.5px; padding:6px 12px; border-radius:8px; background:rgba(255,255,255,0.05); color:var(--muted);}
+
+  .projects{display:grid; grid-template-columns:1fr; gap:20px;}
+  @media(min-width:760px){.projects{grid-template-columns:1fr 1fr;}}
+  .project-card{background:var(--card); border-radius:18px; padding:26px; display:flex; flex-direction:column; gap:14px; border:1px solid var(--line); transition:transform 0.15s, border-color 0.15s;}
+  .project-card:hover{transform:translateY(-4px); border-color:var(--accent);}
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .project-name{font-family:var(--display); font-weight:700; font-size:17px;}
+  .project-tag{font-family:var(--mono); font-size:10.5px; padding:5px 11px; border-radius:999px; white-space:nowrap; font-weight:500;}
+  .project-desc{color:var(--muted); font-size:14px; flex-grow:1;}
+  .project-links{display:flex; flex-wrap:wrap; gap:8px;}
+  .project-links a{font-family:var(--mono); font-size:11.5px; padding:6px 12px; border-radius:8px; background:rgba(255,255,255,0.06);}
+  .tag-coral{background:var(--coral-d); color:var(--coral);}
+  .tag-yellow{background:var(--yellow-d); color:var(--yellow);}
+  .tag-teal{background:var(--teal-d); color:var(--teal);}
+  .tag-pink{background:var(--pink-d); color:var(--pink);}
+  .link-coral{color:var(--coral);} .link-yellow{color:var(--yellow);} .link-teal{color:var(--teal);} .link-pink{color:var(--pink);}
+
+  .timeline{position:relative; padding-left:30px; border-left:3px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{position:absolute; left:-39px; top:2px; width:16px; height:16px; border-radius:50%; border:3px solid var(--bg);}
+  .tl-role{font-family:var(--display); font-weight:700; font-size:16px;}
+  .tl-meta{font-family:var(--mono); font-size:12px; color:var(--muted-2); margin:5px 0 10px;}
+  .tl-desc{color:var(--muted); font-size:14px; max-width:60ch;}
+
+  .two-col{display:grid; grid-template-columns:1fr; gap:40px;}
+  @media(min-width:800px){.two-col{grid-template-columns:1fr 1fr;}}
+  .edu-card{background:var(--card); border-radius:18px; padding:26px; border-top:4px solid var(--blue);}
+  .edu-card h3{font-family:var(--display); font-size:16px; margin-bottom:8px;}
+  .edu-card p{color:var(--muted); font-size:13.5px; margin-bottom:4px;}
+  .cert-list{list-style:none; background:var(--card); border-radius:18px; padding:8px 24px; border-top:4px solid var(--pink);}
+  .cert-list li{padding:16px 0; border-bottom:1px solid var(--line); font-size:13.5px; color:var(--muted);}
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list strong{color:var(--text); display:block; font-family:var(--display); font-size:14px; margin-bottom:2px;}
+
+  footer{padding:80px 0 50px;}
+  .contact-box{background:linear-gradient(135deg, var(--coral), var(--teal)); border-radius:28px; padding:56px 34px; text-align:center; color:#062418;}
+  .contact-box h2{color:#062418; margin-bottom:12px;}
+  .contact-box p{color:#0E3D28; max-width:52ch; margin:0 auto 28px; font-size:15px;}
+  .contact-links{display:flex; justify-content:center; gap:14px; flex-wrap:wrap;}
+  .contact-box .btn.primary{background:#062418; color:#E7FBF0;}
+  .contact-box .btn.ghost{border-color:#062418; color:#062418;}
+  .footnote{text-align:center; margin-top:36px; font-family:var(--mono); font-size:11.5px; color:var(--muted-2);}
+</style>
+</head>
+<body>
+
+<div class="nav-mobile">
+  <div class="brand">islam<span class="dot">.</span>dev</div>
+</div>
+<div class="navbar">
+  <div class="pill-nav">
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker"><span class="live-dot"></span>Open to opportunities</div>
+      <h1>I build Android apps that <span class="hl">ship, scale</span> &amp; don't crash.</h1>
+      <p class="hero-sub">Senior Android Developer with 8+ years of experience — 15+ apps live on the Play Store across e-commerce, delivery, fintech and healthcare. Kotlin, Jetpack Compose, Clean Architecture.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#projects">View my apps</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="badge-row">
+        <span class="mini-badge">Beni Suef, Egypt</span>
+        <span class="mini-badge">Kotlin · Java</span>
+        <span class="mini-badge">MVVM · MVI · Clean Architecture</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone">
+        <div class="phone-status"><span>9:41</span><span>●●● 100%</span></div>
+        <div class="app-grid">
+          <div class="app-icon"><div class="icon-box ic-coral">GM</div><span>GoodsMart</span></div>
+          <div class="app-icon"><div class="icon-box ic-yellow">SP</div><span>Speedi</span></div>
+          <div class="app-icon"><div class="icon-box ic-yellow">MH</div><span>Mhallat</span></div>
+          <div class="app-icon"><div class="icon-box ic-yellow">TR</div><span>Torido</span></div>
+          <div class="app-icon"><div class="icon-box ic-pink">IE</div><span>IEM Drugs</span></div>
+          <div class="app-icon"><div class="icon-box ic-pink">ET</div><span>Etamn</span></div>
+          <div class="app-icon"><div class="icon-box ic-pink">AX</div><span>Axon</span></div>
+          <div class="app-icon"><div class="icon-box ic-yellow">SF</div><span>Sofood</span></div>
+          <div class="app-icon"><div class="icon-box ic-teal">EK</div><span>Ekrar</span></div>
+          <div class="app-icon"><div class="icon-box ic-yellow">HM</div><span>Homam</span></div>
+        </div>
+        <div class="phone-caption">15+ apps shipped to production</div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--coral)"></i>E-commerce</span>
+        <span><i style="background:var(--yellow)"></i>Delivery</span>
+        <span><i style="background:var(--teal)"></i>Fintech</span>
+        <span><i style="background:var(--pink)"></i>Healthcare</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>8+ years, 15+ apps shipped.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a <strong>Senior Android Developer</strong> based in Beni Suef, Egypt, currently leading Android development for <strong>GoodsMart's</strong> e-commerce platform. Over 8+ years I've shipped large-scale apps across e-commerce, delivery, fintech and healthcare.</p>
+        <p>My core strength is <strong>Clean Architecture, MVVM/MVI, and Jetpack Compose</strong>, paired with hands-on experience wiring up real payment infrastructure — <strong>PayMob, HyperPay, PayTabs, Tamara, NBE, PayFort and Google Pay</strong> — across multiple production apps.</p>
+        <p>I've also focused heavily on <strong>app stability</strong>: reducing crash rates and improving performance using Firebase Crashlytics, LeakCanary, and Android Studio Profiler.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card stat-coral"><div class="stat-num">8+</div><div class="stat-label">years of Android experience</div></div>
+        <div class="stat-card stat-teal"><div class="stat-num">15+</div><div class="stat-label">apps published on Play Store</div></div>
+        <div class="stat-card stat-pink"><div class="stat-num">9</div><div class="stat-label">payment gateways integrated</div></div>
+        <div class="stat-card stat-yellow"><div class="stat-num">5</div><div class="stat-label">companies / teams</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="eyebrow">Stack</div>
+    <h2>Technical skills.</h2>
+    <div class="stack-grid">
+      <div class="stack-card" style="--accent:var(--coral)">
+        <h3>Architecture</h3>
+        <div class="chip-row">
+          <span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">MVVM</span>
+          <span class="chip">MVI</span><span class="chip">MVC</span><span class="chip">Clean Architecture</span>
+          <span class="chip">Jetpack Compose</span><span class="chip">XML</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--teal)">
+        <h3>Async &amp; data</h3>
+        <div class="chip-row">
+          <span class="chip">RxJava</span><span class="chip">Coroutines</span><span class="chip">Room</span>
+          <span class="chip">SQLite</span><span class="chip">SharedPreferences</span><span class="chip">Koin</span><span class="chip">Hilt</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--pink)">
+        <h3>Payments &amp; Firebase</h3>
+        <div class="chip-row">
+          <span class="chip">PayMob</span><span class="chip">HyperPay</span><span class="chip">PayTabs</span><span class="chip">Tamara</span>
+          <span class="chip">NBE</span><span class="chip">PayFort</span><span class="chip">DSquare</span><span class="chip">Google Pay</span>
+          <span class="chip">Firestore</span><span class="chip">FCM</span><span class="chip">Crashlytics</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--yellow)">
+        <h3>Realtime &amp; tooling</h3>
+        <div class="chip-row">
+          <span class="chip">Socket.IO</span><span class="chip">Pusher</span><span class="chip">Twilio</span><span class="chip">Zoom SDK</span>
+          <span class="chip">LeakCanary</span><span class="chip">ProGuard</span><span class="chip">Cert Pinning</span>
+          <span class="chip">Jira/Asana/Trello</span><span class="chip">Figma/XD/Zeplin</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div>
+    <h2>Published apps.</h2>
+    <div class="projects">
+
+      <div class="project-card" style="--accent:var(--coral)">
+        <div class="project-top"><div class="project-name">GoodsMart</div><div class="project-tag tag-coral">E-commerce</div></div>
+        <div class="project-desc">E-commerce application — development &amp; ongoing maintenance. Kotlin, Jetpack Compose, MVVM, Clean Architecture, with NBE/PayMob/DSquare payment integration.</div>
+        <div class="project-links"><a class="link-coral" href="https://play.google.com/store/apps/details?id=hussein.apps.talabaty" target="_blank" rel="noopener">Play Store ↗</a></div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--yellow)">
+        <div class="project-top"><div class="project-name">Speedi</div><div class="project-tag tag-yellow">Delivery</div></div>
+        <div class="project-desc">Al-Othaim Market shopping &amp; delivery app serving thousands of users. Integrated PayTabs, HyperPay, and Tamara; reduced crash rates via Firebase Crashlytics.</div>
+        <div class="project-links"><a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.sevenservices.speedi" target="_blank" rel="noopener">Play Store ↗</a></div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--yellow)">
+        <div class="project-top"><div class="project-name">Mhallat</div><div class="project-tag tag-yellow">Delivery, 3 apps</div></div>
+        <div class="project-desc">Multi-platform delivery service — separate apps for customers, store management, and delivery drivers.</div>
+        <div class="project-links">
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallat" target="_blank" rel="noopener">Customer ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallatstore" target="_blank" rel="noopener">Store ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallatdelivery" target="_blank" rel="noopener">Driver ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--yellow)">
+        <div class="project-top"><div class="project-name">Torido</div><div class="project-tag tag-yellow">Delivery, 2 apps</div></div>
+        <div class="project-desc">Goods delivery and transportation platform, with dedicated apps for end users and drivers ("Captains").</div>
+        <div class="project-links">
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.torido.app" target="_blank" rel="noopener">User ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.torido.driver" target="_blank" rel="noopener">Captain ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--pink)">
+        <div class="project-top"><div class="project-name">IEM Drugs &amp; Etamn</div><div class="project-tag tag-pink">Healthcare</div></div>
+        <div class="project-desc">Medical information app with live doctor-consultation chat (IEM Drugs), and a healthcare platform connecting doctors with medical companies (Etamn).</div>
+        <div class="project-links">
+          <a class="link-pink" href="https://play.google.com/store/apps/details?id=com.waiteg.iemdrugs" target="_blank" rel="noopener">IEM Drugs ↗</a>
+          <a class="link-pink" href="https://play.google.com/store/apps/details?id=com.etamnvisit" target="_blank" rel="noopener">Etamn ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--pink)">
+        <div class="project-top"><div class="project-name">Axon Provider</div><div class="project-tag tag-pink">Healthcare</div></div>
+        <div class="project-desc">Comprehensive medical services platform for providers.</div>
+        <div class="project-links"><a class="link-pink" href="https://play.google.com/store/apps/details?id=com.axon.plus" target="_blank" rel="noopener">Play Store ↗</a></div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--yellow)">
+        <div class="project-top"><div class="project-name">Sofood</div><div class="project-tag tag-yellow">Food delivery, 2 apps</div></div>
+        <div class="project-desc">Restaurant food delivery system — customer-facing app plus a combined restaurant &amp; driver management app.</div>
+        <div class="project-links"><a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.stech.sofood" target="_blank" rel="noopener">Customer ↗</a></div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--teal)">
+        <div class="project-top"><div class="project-name">Ekrar</div><div class="project-tag tag-teal">Fintech</div></div>
+        <div class="project-desc">Financial transaction management app for the Saudi Arabian market.</div>
+        <div class="project-links"><a class="link-teal" href="https://play.google.com/store/apps/details?id=com.otex.ekrar" target="_blank" rel="noopener">Play Store ↗</a></div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--yellow)">
+        <div class="project-top"><div class="project-name">Homam</div><div class="project-tag tag-yellow">Delivery, 2 apps</div></div>
+        <div class="project-desc">Delivery system with separate apps for customers and for restaurants/drivers.</div>
+        <div class="project-links">
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.otex.homamuser" target="_blank" rel="noopener">Customer ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.otex.homamdriver" target="_blank" rel="noopener">Restaurant/Driver ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Experience</div>
+    <h2>Where I've built things.</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--coral)"></div>
+        <div class="tl-role">Senior Android Developer — GoodsMart</div>
+        <div class="tl-meta">Nov 2023 – Present</div>
+        <div class="tl-desc">Leading Android app development for GoodsMart's e-commerce platform. Kotlin, Jetpack Compose, MVVM, Clean Architecture. Integrated NBE, PayMob and DSquare payment gateways.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--yellow)"></div>
+        <div class="tl-role">Senior Android Developer — Speedi (Al-Othaim Market)</div>
+        <div class="tl-meta">Jan 2022 – Nov 2023</div>
+        <div class="tl-desc">Developed and maintained a large-scale retail app serving thousands of users. Integrated PayTabs, HyperPay and Tamara. Improved stability and performance with Firebase Crashlytics, Canary and Android Studio Profiler.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--teal)"></div>
+        <div class="tl-role">Android Developer — Wisyst</div>
+        <div class="tl-meta">Jan 2020 – Jan 2022</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--pink)"></div>
+        <div class="tl-role">Android Developer — IscoApp Company</div>
+        <div class="tl-meta">Jan 2019 – Jan 2020</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--blue)"></div>
+        <div class="tl-role">Android Developer — Sawa4 Company</div>
+        <div class="tl-meta">Feb 2018 – Jan 2019</div>
+        <div class="tl-desc">Built and optimized Android apps; collaborated with designers on UI/UX consistency; integrated social media APIs and payment methods across multiple client apps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Education &amp; certifications</div>
+    <h2>Background.</h2>
+    <div class="two-col">
+      <div class="edu-card">
+        <h3>Bachelor's Degree, Computer Science</h3>
+        <p>Beni Suef University, Egypt · 2013 – 2017</p>
+        <p>Graduation Grade: Good · Project Grade: Excellent (A)</p>
+      </div>
+      <ul class="cert-list">
+        <li><strong>Mobile Application Launchpad (MAL)</strong>Udacity, Google &amp; Ministry of Communication — 2016</li>
+        <li><strong>Android Developer Nanodegree Scholarship</strong>Udacity &amp; Google — 2018</li>
+        <li><strong>Android With Kotlin</strong>Udacity &amp; Google — 2019</li>
+        <li><strong>Android With Kotlin – Jetpack Compose</strong>Udacity &amp; Google — 2022</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's build something.</h2>
+      <p>Open to Senior Android Developer roles and freelance projects — e-commerce, delivery, fintech, healthcare, or anything that needs an app that holds up in production.</p>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:islam.mahmoud116@gmail.com">Email me</a>
+        <a class="btn ghost" href="tel:+201024975966">Call: 01024975966</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/islam-mahmoud-033429117/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footnote">Islam Ibrahim — Beni Suef, Egypt — <span id="year"></span></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
