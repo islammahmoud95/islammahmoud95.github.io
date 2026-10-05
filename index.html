@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Islam Ibrahim — Senior Android Developer</title>
+<title>Islam Mahmoud — Senior Android Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -65,7 +65,7 @@
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
   .hero h1{font-family:var(--display); font-weight:700; font-size:clamp(34px,5.2vw,58px); line-height:1.08; letter-spacing:-1px;}
   .hero h1 .hl{color:var(--coral);}
-  .hero-sub{margin-top:20px; color:var(--muted); font-size:17px; max-width:520px;}
+  .hero-sub{margin-top:20px; color:var(--muted); font-size:17px; max-width:540px;}
   .cta-row{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;}
   .btn{font-family:var(--sans); font-weight:600; font-size:14px; padding:14px 26px; border-radius:999px; border:2px solid transparent; transition:transform 0.15s;}
   .btn:hover{transform:translateY(-2px);}
@@ -139,7 +139,10 @@
   .tl-dot{position:absolute; left:-39px; top:2px; width:16px; height:16px; border-radius:50%; border:3px solid var(--bg);}
   .tl-role{font-family:var(--display); font-weight:700; font-size:16px;}
   .tl-meta{font-family:var(--mono); font-size:12px; color:var(--muted-2); margin:5px 0 10px;}
-  .tl-desc{color:var(--muted); font-size:14px; max-width:60ch;}
+  .tl-desc{color:var(--muted); font-size:14px; max-width:64ch;}
+  .tl-desc ul{list-style:none; display:flex; flex-direction:column; gap:6px;}
+  .tl-desc li{position:relative; padding-left:16px;}
+  .tl-desc li::before{content:""; position:absolute; left:0; top:0.7em; width:6px; height:6px; border-radius:50%; background:var(--line);}
 
   .two-col{display:grid; grid-template-columns:1fr; gap:40px;}
   @media(min-width:800px){.two-col{grid-template-columns:1fr 1fr;}}
@@ -184,14 +187,15 @@
     <div>
       <div class="kicker"><span class="live-dot"></span>Open to opportunities</div>
       <h1>I build Android apps that <span class="hl">ship, scale</span> &amp; don't crash.</h1>
-      <p class="hero-sub">Senior Android Developer with 8+ years of experience — 15+ apps live on the Play Store across e-commerce, delivery, fintech and healthcare. Kotlin, Jetpack Compose, Clean Architecture.</p>
+      <p class="hero-sub">Senior Android Developer with 8+ years of experience — 20+ published apps across e-commerce, delivery/logistics and healthcare in the MENA region. Kotlin, Jetpack Compose, Clean Architecture.</p>
       <div class="cta-row">
         <a class="btn primary" href="#projects">View my apps</a>
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
       <div class="badge-row">
-        <span class="mini-badge">Beni Suef, Egypt</span>
+        <span class="mini-badge">Cairo, Egypt</span>
         <span class="mini-badge">Kotlin · Java</span>
+        <span class="mini-badge">Jetpack Compose</span>
         <span class="mini-badge">MVVM · MVI · Clean Architecture</span>
       </div>
     </div>
@@ -211,12 +215,12 @@
           <div class="app-icon"><div class="icon-box ic-teal">EK</div><span>Ekrar</span></div>
           <div class="app-icon"><div class="icon-box ic-yellow">HM</div><span>Homam</span></div>
         </div>
-        <div class="phone-caption">15+ apps shipped to production</div>
+        <div class="phone-caption">20+ apps shipped to production</div>
       </div>
       <div class="legend">
         <span><i style="background:var(--coral)"></i>E-commerce</span>
         <span><i style="background:var(--yellow)"></i>Delivery</span>
-        <span><i style="background:var(--teal)"></i>Fintech</span>
+        <span><i style="background:var(--teal)"></i>Finance</span>
         <span><i style="background:var(--pink)"></i>Healthcare</span>
       </div>
     </div>
@@ -226,16 +230,16 @@
 <section id="about">
   <div class="wrap">
     <div class="eyebrow">About</div>
-    <h2>8+ years, 15+ apps shipped.</h2>
+    <h2>8+ years, 20+ apps shipped.</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm a <strong>Senior Android Developer</strong> based in Beni Suef, Egypt, currently leading Android development for <strong>GoodsMart's</strong> e-commerce platform. Over 8+ years I've shipped large-scale apps across e-commerce, delivery, fintech and healthcare.</p>
-        <p>My core strength is <strong>Clean Architecture, MVVM/MVI, and Jetpack Compose</strong>, paired with hands-on experience wiring up real payment infrastructure — <strong>PayMob, HyperPay, PayTabs, Tamara, NBE, PayFort and Google Pay</strong> — across multiple production apps.</p>
-        <p>I've also focused heavily on <strong>app stability</strong>: reducing crash rates and improving performance using Firebase Crashlytics, LeakCanary, and Android Studio Profiler.</p>
+        <p>I'm a <strong>Senior Android Developer</strong> based in Cairo, Egypt, currently leading Android development for <strong>GoodsMart's</strong> e-commerce platform. Over 8+ years I've shipped and maintained apps across e-commerce, delivery/logistics and healthcare in the MENA region.</p>
+        <p>My core strength is <strong>Kotlin, Jetpack Compose and Clean Architecture</strong>, paired with end-to-end payment gateway integrations — <strong>PayMob, HyperPay, PayTabs, Tamara, NBE, PayFort, DSquare and Google Pay</strong> — across multiple production apps.</p>
+        <p>I've also focused on <strong>app stability and performance</strong>: reducing crash rates in large, multi-flavor production apps serving thousands of active users, using Firebase Crashlytics, LeakCanary and Android Studio Profiler. I'm comfortable owning features from architecture through release, working closely with product, design and backend teams.</p>
       </div>
       <div class="stat-grid">
         <div class="stat-card stat-coral"><div class="stat-num">8+</div><div class="stat-label">years of Android experience</div></div>
-        <div class="stat-card stat-teal"><div class="stat-num">15+</div><div class="stat-label">apps published on Play Store</div></div>
+        <div class="stat-card stat-teal"><div class="stat-num">20+</div><div class="stat-label">apps published</div></div>
         <div class="stat-card stat-pink"><div class="stat-num">9</div><div class="stat-label">payment gateways integrated</div></div>
         <div class="stat-card stat-yellow"><div class="stat-num">5</div><div class="stat-label">companies / teams</div></div>
       </div>
@@ -249,34 +253,82 @@
     <h2>Technical skills.</h2>
     <div class="stack-grid">
       <div class="stack-card" style="--accent:var(--coral)">
-        <h3>Architecture</h3>
+        <h3>Languages &amp; architecture</h3>
         <div class="chip-row">
           <span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">MVVM</span>
           <span class="chip">MVI</span><span class="chip">MVC</span><span class="chip">Clean Architecture</span>
-          <span class="chip">Jetpack Compose</span><span class="chip">XML</span>
+          <span class="chip">Jetpack Components</span>
         </div>
       </div>
       <div class="stack-card" style="--accent:var(--teal)">
-        <h3>Async &amp; data</h3>
+        <h3>UI development</h3>
         <div class="chip-row">
-          <span class="chip">RxJava</span><span class="chip">Coroutines</span><span class="chip">Room</span>
-          <span class="chip">SQLite</span><span class="chip">SharedPreferences</span><span class="chip">Koin</span><span class="chip">Hilt</span>
+          <span class="chip">Jetpack Compose</span><span class="chip">XML</span><span class="chip">Google Material Design</span>
         </div>
       </div>
       <div class="stack-card" style="--accent:var(--pink)">
-        <h3>Payments &amp; Firebase</h3>
+        <h3>Async, DI &amp; local storage</h3>
         <div class="chip-row">
-          <span class="chip">PayMob</span><span class="chip">HyperPay</span><span class="chip">PayTabs</span><span class="chip">Tamara</span>
-          <span class="chip">NBE</span><span class="chip">PayFort</span><span class="chip">DSquare</span><span class="chip">Google Pay</span>
-          <span class="chip">Firestore</span><span class="chip">FCM</span><span class="chip">Crashlytics</span>
+          <span class="chip">Kotlin Coroutines</span><span class="chip">RxJava</span>
+          <span class="chip">Hilt</span><span class="chip">Koin</span>
+          <span class="chip">Room</span><span class="chip">SQLite</span><span class="chip">SharedPreferences</span><span class="chip">Data Store</span>
         </div>
       </div>
       <div class="stack-card" style="--accent:var(--yellow)">
-        <h3>Realtime &amp; tooling</h3>
+        <h3>Backend &amp; APIs</h3>
         <div class="chip-row">
-          <span class="chip">Socket.IO</span><span class="chip">Pusher</span><span class="chip">Twilio</span><span class="chip">Zoom SDK</span>
-          <span class="chip">LeakCanary</span><span class="chip">ProGuard</span><span class="chip">Cert Pinning</span>
-          <span class="chip">Jira/Asana/Trello</span><span class="chip">Figma/XD/Zeplin</span>
+          <span class="chip">RESTful APIs</span><span class="chip">Google/Algolia search</span><span class="chip">Third-party SDKs</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--coral)">
+        <h3>Payments</h3>
+        <div class="chip-row">
+          <span class="chip">PayMob</span><span class="chip">HyperPay</span><span class="chip">PayTabs</span><span class="chip">Tamara</span>
+          <span class="chip">NBE</span><span class="chip">PayFort</span><span class="chip">DSquare</span><span class="chip">Google Pay</span><span class="chip">Voucher Systems</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--teal)">
+        <h3>Firebase</h3>
+        <div class="chip-row">
+          <span class="chip">Realtime Database</span><span class="chip">Firestore</span><span class="chip">Analytics</span><span class="chip">Cloud Messaging</span><span class="chip">Crashlytics</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--pink)">
+        <h3>Real-time communication</h3>
+        <div class="chip-row">
+          <span class="chip">Socket.IO (Pusher, Twilio)</span><span class="chip">Zoom SDK</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--yellow)">
+        <h3>Testing, quality &amp; security</h3>
+        <div class="chip-row">
+          <span class="chip">Unit Testing</span><span class="chip">LeakCanary</span><span class="chip">Android Profiler</span><span class="chip">Manual Testing</span>
+          <span class="chip">ProGuard</span><span class="chip">Certificate Pinning</span><span class="chip">Secure File Handling</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--coral)">
+        <h3>CI/CD, Git &amp; project tools</h3>
+        <div class="chip-row">
+          <span class="chip">App Center CI/CD</span><span class="chip">GitHub</span><span class="chip">Bitbucket</span><span class="chip">GitLab</span>
+          <span class="chip">Jira</span><span class="chip">Asana</span><span class="chip">Trello</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--teal)">
+        <h3>Analytics</h3>
+        <div class="chip-row">
+          <span class="chip">Branch.io</span><span class="chip">Moengage</span><span class="chip">Adjust</span><span class="chip">Firebase Analytics</span><span class="chip">Facebook Analytics</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--pink)">
+        <h3>Methodology</h3>
+        <div class="chip-row">
+          <span class="chip">Agile</span><span class="chip">Scrum</span><span class="chip">Clean Code principles</span>
+        </div>
+      </div>
+      <div class="stack-card" style="--accent:var(--yellow)">
+        <h3>UI/UX tools</h3>
+        <div class="chip-row">
+          <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Zeplin</span><span class="chip">UX principles</span>
         </div>
       </div>
     </div>
@@ -291,13 +343,13 @@
 
       <div class="project-card" style="--accent:var(--coral)">
         <div class="project-top"><div class="project-name">GoodsMart</div><div class="project-tag tag-coral">E-commerce</div></div>
-        <div class="project-desc">E-commerce application — development &amp; ongoing maintenance. Kotlin, Jetpack Compose, MVVM, Clean Architecture, with NBE/PayMob/DSquare payment integration.</div>
+        <div class="project-desc">E-commerce application — development &amp; maintenance.</div>
         <div class="project-links"><a class="link-coral" href="https://play.google.com/store/apps/details?id=hussein.apps.talabaty" target="_blank" rel="noopener">Play Store ↗</a></div>
       </div>
 
       <div class="project-card" style="--accent:var(--yellow)">
         <div class="project-top"><div class="project-name">Speedi</div><div class="project-tag tag-yellow">Delivery</div></div>
-        <div class="project-desc">Al-Othaim Market shopping &amp; delivery app serving thousands of users. Integrated PayTabs, HyperPay, and Tamara; reduced crash rates via Firebase Crashlytics.</div>
+        <div class="project-desc">Al-Othaim Market shopping and delivery app — development &amp; maintenance.</div>
         <div class="project-links"><a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.sevenservices.speedi" target="_blank" rel="noopener">Play Store ↗</a></div>
       </div>
 
@@ -306,8 +358,8 @@
         <div class="project-desc">Multi-platform delivery service — separate apps for customers, store management, and delivery drivers.</div>
         <div class="project-links">
           <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallat" target="_blank" rel="noopener">Customer ↗</a>
-          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallatstore" target="_blank" rel="noopener">Store ↗</a>
-          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallatdelivery" target="_blank" rel="noopener">Driver ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallatstore" target="_blank" rel="noopener">Store Management ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.synergyglobal.mhallatdelivery" target="_blank" rel="noopener">Delivery Driver ↗</a>
         </div>
       </div>
 
@@ -316,43 +368,50 @@
         <div class="project-desc">Goods delivery and transportation platform, with dedicated apps for end users and drivers ("Captains").</div>
         <div class="project-links">
           <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.torido.app" target="_blank" rel="noopener">User ↗</a>
-          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.torido.driver" target="_blank" rel="noopener">Captain ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.torido.driver" target="_blank" rel="noopener">Captain (Driver) ↗</a>
         </div>
       </div>
 
       <div class="project-card" style="--accent:var(--pink)">
-        <div class="project-top"><div class="project-name">IEM Drugs &amp; Etamn</div><div class="project-tag tag-pink">Healthcare</div></div>
-        <div class="project-desc">Medical information app with live doctor-consultation chat (IEM Drugs), and a healthcare platform connecting doctors with medical companies (Etamn).</div>
+        <div class="project-top"><div class="project-name">IEM Drugs</div><div class="project-tag tag-pink">Healthcare</div></div>
+        <div class="project-desc">Medical information app with doctor consultation chat.</div>
         <div class="project-links">
-          <a class="link-pink" href="https://play.google.com/store/apps/details?id=com.waiteg.iemdrugs" target="_blank" rel="noopener">IEM Drugs ↗</a>
-          <a class="link-pink" href="https://play.google.com/store/apps/details?id=com.etamnvisit" target="_blank" rel="noopener">Etamn ↗</a>
+          <a class="link-pink" href="https://play.google.com/store/apps/details?id=com.waiteg.iemdrugs" target="_blank" rel="noopener">Play Store ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="--accent:var(--pink)">
+        <div class="project-top"><div class="project-name">Etamn</div><div class="project-tag tag-pink">Healthcare</div></div>
+        <div class="project-desc">Healthcare platform connecting doctors and medical companies.</div>
+        <div class="project-links">
+          <a class="link-pink" href="https://play.google.com/store/apps/details?id=com.etamnvisit" target="_blank" rel="noopener">Play Store ↗</a>
         </div>
       </div>
 
       <div class="project-card" style="--accent:var(--pink)">
         <div class="project-top"><div class="project-name">Axon Provider</div><div class="project-tag tag-pink">Healthcare</div></div>
-        <div class="project-desc">Comprehensive medical services platform for providers.</div>
+        <div class="project-desc">Comprehensive medical services platform.</div>
         <div class="project-links"><a class="link-pink" href="https://play.google.com/store/apps/details?id=com.axon.plus" target="_blank" rel="noopener">Play Store ↗</a></div>
       </div>
 
       <div class="project-card" style="--accent:var(--yellow)">
-        <div class="project-top"><div class="project-name">Sofood</div><div class="project-tag tag-yellow">Food delivery, 2 apps</div></div>
-        <div class="project-desc">Restaurant food delivery system — customer-facing app plus a combined restaurant &amp; driver management app.</div>
+        <div class="project-top"><div class="project-name">Sofood</div><div class="project-tag tag-yellow">Food delivery</div></div>
+        <div class="project-desc">Customer app for a restaurant food delivery system.</div>
         <div class="project-links"><a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.stech.sofood" target="_blank" rel="noopener">Customer ↗</a></div>
       </div>
 
       <div class="project-card" style="--accent:var(--teal)">
-        <div class="project-top"><div class="project-name">Ekrar</div><div class="project-tag tag-teal">Fintech</div></div>
-        <div class="project-desc">Financial transaction management app for the Saudi Arabian market.</div>
+        <div class="project-top"><div class="project-name">Ekrar</div><div class="project-tag tag-teal">Finance</div></div>
+        <div class="project-desc">Saudi Arabia financial transaction management app.</div>
         <div class="project-links"><a class="link-teal" href="https://play.google.com/store/apps/details?id=com.otex.ekrar" target="_blank" rel="noopener">Play Store ↗</a></div>
       </div>
 
       <div class="project-card" style="--accent:var(--yellow)">
         <div class="project-top"><div class="project-name">Homam</div><div class="project-tag tag-yellow">Delivery, 2 apps</div></div>
-        <div class="project-desc">Delivery system with separate apps for customers and for restaurants/drivers.</div>
+        <div class="project-desc">Delivery system with separate apps for customers and for restaurants &amp; drivers.</div>
         <div class="project-links">
           <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.otex.homamuser" target="_blank" rel="noopener">Customer ↗</a>
-          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.otex.homamdriver" target="_blank" rel="noopener">Restaurant/Driver ↗</a>
+          <a class="link-yellow" href="https://play.google.com/store/apps/details?id=com.otex.homamdriver" target="_blank" rel="noopener">Restaurant &amp; Driver ↗</a>
         </div>
       </div>
 
@@ -369,29 +428,48 @@
         <div class="tl-dot" style="background:var(--coral)"></div>
         <div class="tl-role">Senior Android Developer — GoodsMart</div>
         <div class="tl-meta">Nov 2023 – Present</div>
-        <div class="tl-desc">Leading Android app development for GoodsMart's e-commerce platform. Kotlin, Jetpack Compose, MVVM, Clean Architecture. Integrated NBE, PayMob and DSquare payment gateways.</div>
+        <div class="tl-desc"><ul>
+          <li>Lead Android development for GoodsMart's e-commerce platform, owning features end to end from architecture through release.</li>
+          <li>Built scalable features using Kotlin, Jetpack Compose, MVVM and Clean Architecture, improving code maintainability and reducing feature delivery time.</li>
+          <li>Integrated multiple payment gateways (NBE, PayMob, DSquare), enabling secure in-app checkout for the platform's customer base.</li>
+          <li>Collaborate with cross-functional teams (product, design, backend) to enhance app performance and user experience.</li>
+        </ul></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot" style="background:var(--yellow)"></div>
-        <div class="tl-role">Senior Android Developer — Speedi (Al-Othaim Market)</div>
+        <div class="tl-role">Senior Android Developer — Speedi (Othaim Market Product App)</div>
         <div class="tl-meta">Jan 2022 – Nov 2023</div>
-        <div class="tl-desc">Developed and maintained a large-scale retail app serving thousands of users. Integrated PayTabs, HyperPay and Tamara. Improved stability and performance with Firebase Crashlytics, Canary and Android Studio Profiler.</div>
+        <div class="tl-desc"><ul>
+          <li>Developed and maintained a large-scale retail application serving thousands of active users.</li>
+          <li>Integrated payment gateways (PayTabs, HyperPay, Tamara) supporting multiple checkout and installment flows.</li>
+          <li>Reduced crash rate and improved app stability using Firebase Crashlytics, Canary and Android Studio Profiler for continuous monitoring and diagnosis.</li>
+        </ul></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot" style="background:var(--teal)"></div>
-        <div class="tl-role">Android Developer — Wisyst</div>
+        <div class="tl-role">Android Developer — IscoApp Company</div>
         <div class="tl-meta">Jan 2020 – Jan 2022</div>
+        <div class="tl-desc"><ul>
+          <li>Built and maintained native Android features for client applications, working closely with backend and design teams.</li>
+          <li>Contributed to performance improvements and bug resolution across production releases.</li>
+        </ul></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot" style="background:var(--pink)"></div>
-        <div class="tl-role">Android Developer — IscoApp Company</div>
+        <div class="tl-role">Android Developer — Wisyst</div>
         <div class="tl-meta">Jan 2019 – Jan 2020</div>
+        <div class="tl-desc"><ul>
+          <li>Built and optimized Android apps; collaborated with designers to improve UI/UX consistency across projects.</li>
+        </ul></div>
       </div>
       <div class="tl-item">
         <div class="tl-dot" style="background:var(--blue)"></div>
         <div class="tl-role">Android Developer — Sawa4 Company</div>
         <div class="tl-meta">Feb 2018 – Jan 2019</div>
-        <div class="tl-desc">Built and optimized Android apps; collaborated with designers on UI/UX consistency; integrated social media APIs and payment methods across multiple client apps.</div>
+        <div class="tl-desc"><ul>
+          <li>Contributed to multiple client Android apps and ensured quality delivery.</li>
+          <li>Integrated social media APIs and payment methods.</li>
+        </ul></div>
       </div>
     </div>
   </div>
@@ -403,15 +481,15 @@
     <h2>Background.</h2>
     <div class="two-col">
       <div class="edu-card">
-        <h3>Bachelor's Degree, Computer Science</h3>
+        <h3>Bachelor's Degree in Computer Science</h3>
         <p>Beni Suef University, Egypt · 2013 – 2017</p>
         <p>Graduation Grade: Good · Project Grade: Excellent (A)</p>
       </div>
       <ul class="cert-list">
         <li><strong>Mobile Application Launchpad (MAL)</strong>Udacity, Google &amp; Ministry of Communication — 2016</li>
         <li><strong>Android Developer Nanodegree Scholarship</strong>Udacity &amp; Google — 2018</li>
-        <li><strong>Android With Kotlin</strong>Udacity &amp; Google — 2019</li>
-        <li><strong>Android With Kotlin – Jetpack Compose</strong>Udacity &amp; Google — 2022</li>
+        <li><strong>Android with Kotlin</strong>Udacity &amp; Google — 2019</li>
+        <li><strong>Android with Kotlin — Jetpack Compose</strong>Udacity &amp; Google — 2022</li>
       </ul>
     </div>
   </div>
@@ -421,14 +499,14 @@
   <div class="wrap">
     <div class="contact-box">
       <h2>Let's build something.</h2>
-      <p>Open to Senior Android Developer roles and freelance projects — e-commerce, delivery, fintech, healthcare, or anything that needs an app that holds up in production.</p>
+      <p>Open to Senior Android Developer roles and freelance projects — e-commerce, delivery, healthcare, or anything that needs an app that holds up in production.</p>
       <div class="contact-links">
         <a class="btn primary" href="mailto:islam.mahmoud116@gmail.com">Email me</a>
         <a class="btn ghost" href="tel:+201024975966">Call: 01024975966</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/islam-mahmoud-033429117/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <div class="footnote">Islam Ibrahim — Beni Suef, Egypt — <span id="year"></span></div>
+    <div class="footnote">Islam Mahmoud — Cairo, Egypt — <span id="year"></span></div>
   </div>
 </footer>
 
